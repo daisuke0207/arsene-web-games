@@ -5,17 +5,17 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  // useMatches,
-  // useLoaderData,
+  useMatches,
+  useLoaderData,
 } from "remix";
 import type { MetaFunction, LinksFunction, LoaderFunction } from "remix";
 import { ChakraProvider } from "@chakra-ui/react";
-// import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import styles from "~/styles/index.css";
 import { theme } from "~/styles/theme";
 import { siteConfig } from "~/constants/siteConfig";
-import { websiteMeta } from "~/utils/meta"; // jsonLd
+import { websiteMeta, jsonLd } from "~/utils/meta";
 import Layout from "~/components/common/layout";
 
 export const meta: MetaFunction = (props) => {
@@ -50,22 +50,22 @@ export const loader: LoaderFunction = async () => {
 };
 
 export default function App() {
-  // const data = useLoaderData();
-  // const matches = useMatches();
-  // const location = useLocation();
+  const data = useLoaderData();
+  const matches = useMatches();
+  const location = useLocation();
 
-  // const loadJsonLd = matches.reverse().find((match) => match?.data?.jsonLd)
-  //   ?.data.jsonLd;
-  // const description = loadJsonLd?.description ? loadJsonLd.description : "";
-  // const imagePath = loadJsonLd?.image ? loadJsonLd.image : "";
-  // const keywords = loadJsonLd?.keywords ? loadJsonLd.keywords : [];
+  const loadJsonLd = matches.reverse().find((match) => match?.data?.jsonLd)
+    ?.data.jsonLd;
+  const description = loadJsonLd?.description ? loadJsonLd.description : "";
+  const imagePath = loadJsonLd?.image ? loadJsonLd.image : "";
+  const keywords = loadJsonLd?.keywords ? loadJsonLd.keywords : [];
 
-  // const json = jsonLd({
-  //   pathname: location.pathname,
-  //   description: description,
-  //   image: imagePath,
-  //   keywords: keywords,
-  // });
+  const json = jsonLd({
+    pathname: location.pathname,
+    description: description,
+    image: imagePath,
+    keywords: keywords,
+  });
 
   return (
     <html lang={siteConfig.lang}>
@@ -74,7 +74,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
-        {/* <script
+        <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -86,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ></script>
         <script suppressHydrationWarning type="application/ld+json">
           {json}
-        </script> */}
+        </script>
       </head>
       <body>
         <ChakraProvider theme={theme}>
