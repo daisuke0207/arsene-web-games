@@ -1,4 +1,4 @@
-import { Footer } from "./footer";
+import { Footer } from "./presenter";
 
 const Container = () => {
   return <Footer />;
