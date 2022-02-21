@@ -74,7 +74,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <Meta />
         <Links />
-        <script
+        {/* <script
           suppressHydrationWarning
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -86,7 +86,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         ></script>
         <script suppressHydrationWarning type="application/ld+json">
           {json}
-        </script>
+        </script> */}
       </head>
       <body>
         <ChakraProvider theme={theme}>
