@@ -1,0 +1,39 @@
+import { Outlet } from "remix";
+import { Box } from "@chakra-ui/react";
+import type { LoaderFunction, MetaFunction } from "remix";
+
+import type { JsonLd } from "~/types";
+import { websiteMeta } from "~/utils/meta";
+
+export const meta: MetaFunction = (props) => {
+  const meta = websiteMeta({
+    pathname: props.location.pathname,
+    title: "ゲーム一覧",
+    description: "ゲームを探す/試す",
+    keywords: ["ゲーム一覧", "Webゲーム"],
+  });
+
+  return {
+    ...meta,
+  };
+};
+
+export const loader: LoaderFunction = async () => {
+  const curJsonLd: JsonLd = {
+    pathname: "/games",
+    description: "ゲームを探す/試す",
+    keywords: ["ゲーム一覧", "Webゲーム"],
+  };
+
+  return { jsonLd: curJsonLd };
+};
+
+export default function Game() {
+  return (
+    <Box w="100%" h="100%" m="0 auto">
+      <Box w="100%" h="100%" m="0 auto">
+        <Outlet />
+      </Box>
+    </Box>
+  );
+}

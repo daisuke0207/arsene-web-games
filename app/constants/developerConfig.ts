@@ -1,1 +1,2 @@
-export const developerConfig = { twitter: "@dai_developer" };
+export const developerConfig = { twitter: "" };
+// twitter: "@dai_developer"
