@@ -31,6 +31,7 @@
   "scripts": {
     "postinstall": "remix setup node",
     "build": "cross-env NODE_ENV=production remix build",
-    "dev": "node -r dotenv/config node_modules/.bin/remix dev"
+    "dev": "node -r dotenv/config node_modules/.bin/remix dev",
+    "typecheck": "tsc -b"
   }
 }

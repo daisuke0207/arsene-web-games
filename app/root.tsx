@@ -5,17 +5,17 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useMatches,
-  useLoaderData,
+  // useMatches,
+  // useLoaderData,
 } from "remix";
 import type { MetaFunction, LinksFunction, LoaderFunction } from "remix";
 import { ChakraProvider } from "@chakra-ui/react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 
 import styles from "~/styles/index.css";
 import { theme } from "~/styles/theme";
 import { siteConfig } from "~/constants/siteConfig";
-import { websiteMeta, jsonLd } from "~/utils/meta";
+import { websiteMeta } from "~/utils/meta"; // jsonLd
 import Layout from "~/components/common/layout";
 
 export const meta: MetaFunction = (props) => {
@@ -50,22 +50,22 @@ export const loader: LoaderFunction = async () => {
 };
 
 export default function App() {
-  const data = useLoaderData();
-  const matches = useMatches();
-  const location = useLocation();
+  // const data = useLoaderData();
+  // const matches = useMatches();
+  // const location = useLocation();
 
-  const loadJsonLd = matches.reverse().find((match) => match?.data?.jsonLd)
-    ?.data.jsonLd;
-  const description = loadJsonLd?.description ? loadJsonLd.description : "";
-  const imagePath = loadJsonLd?.image ? loadJsonLd.image : "";
-  const keywords = loadJsonLd?.keywords ? loadJsonLd.keywords : [];
+  // const loadJsonLd = matches.reverse().find((match) => match?.data?.jsonLd)
+  //   ?.data.jsonLd;
+  // const description = loadJsonLd?.description ? loadJsonLd.description : "";
+  // const imagePath = loadJsonLd?.image ? loadJsonLd.image : "";
+  // const keywords = loadJsonLd?.keywords ? loadJsonLd.keywords : [];
 
-  const json = jsonLd({
-    pathname: location.pathname,
-    description: description,
-    image: imagePath,
-    keywords: keywords,
-  });
+  // const json = jsonLd({
+  //   pathname: location.pathname,
+  //   description: description,
+  //   image: imagePath,
+  //   keywords: keywords,
+  // });
 
   return (
     <html lang={siteConfig.lang}>
