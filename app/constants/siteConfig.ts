@@ -4,7 +4,7 @@ export const siteConfig = {
   metaTitle: "Arsene Games",
   metaDescription: "Webゲームをプレイ",
   metaKeywords: ["Arsene", "Game", "Play"],
-  url: "https://games.arsene.one/",
+  url: "https://games.arsene.one",
   icon: "/A.svg",
   logo: "/arsene-games-red-blue.svg",
   coverImage: "/arsene-games-red-blue-vertical.svg",
