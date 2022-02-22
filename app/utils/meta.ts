@@ -52,7 +52,7 @@ export const websiteMeta = ({
 export const jsonLd = (props: JsonLd) => {
   const pathname = props.pathname ? props.pathname : "/";
   const canonical = new URL(pathname, siteConfig.url).href;
-  const keywords = props.keywords || ["Arsene"];
+  const keywords = props.keywords || ["Arsene", "ゲーム", "タイピング"];
   const description = props.description
     ? `${props.description} | ${siteConfig.metaDescription}`
     : siteConfig.metaDescription;
