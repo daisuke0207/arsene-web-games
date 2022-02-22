@@ -84,9 +84,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','${data.ENV.TAG_MANAGER_ID}');`,
           }}
         ></script>
-        <script suppressHydrationWarning type="application/ld+json">
+        {/* <script suppressHydrationWarning type="application/ld+json">
           {json}
-        </script>
+        </script> */}
       </head>
       <body>
         <ChakraProvider theme={theme}>

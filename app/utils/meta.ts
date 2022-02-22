@@ -66,10 +66,14 @@ export const jsonLd = (props: JsonLd) => {
   ).href;
 
   const jsonLd = {
-    "@context": "https://schema.org/",
-    "@type": "WebPage",
+    "@context": "https://schema.org",
+    "@type": "WebSite",
     url: canonical,
     keywords: keywords.join(`,`),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": siteConfig.url,
+    },
     image: shareImageUrl
       ? {
           "@type": "ImageObject",
@@ -88,12 +92,8 @@ export const jsonLd = (props: JsonLd) => {
         height: 60,
       },
     },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": siteConfig.url,
-    },
-    description,
+    description: description,
   };
 
-  return JSON.stringify(jsonLd, undefined, 4);
+  return JSON.stringify(jsonLd, null, 2);
 };
