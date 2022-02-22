@@ -66,30 +66,30 @@ export const jsonLd = (props: JsonLd) => {
   ).href;
 
   const jsonLd = {
-    "@context": `https://schema.org/`,
+    "@context": "https://schema.org/",
     "@type": "WebPage",
     url: canonical,
-    keywords: keywords.join(`, `),
+    keywords: keywords.join(`,`),
     image: shareImageUrl
       ? {
-          "@type": `ImageObject`,
+          "@type": "ImageObject",
           url: shareImageUrl,
           width: siteConfig.shareImageWidth,
           height: siteConfig.shareImageHeight,
         }
       : "",
     publisher: {
-      "@type": `Organization`,
+      "@type": "Organization",
       name: siteConfig.title,
       logo: {
-        "@type": `ImageObject`,
+        "@type": "ImageObject",
         url: publisherLogo,
         width: 60,
         height: 60,
       },
     },
     mainEntityOfPage: {
-      "@type": `WebPage`,
+      "@type": "WebPage",
       "@id": siteConfig.url,
     },
     description,
