@@ -1,5 +1,9 @@
-import Game from "~/components/pages/game";
+import Game from "~/pages/games";
 
 export default function Index() {
-  return <Game />;
+  return (
+    <>
+      <Game />
+    </>
+  );
 }
