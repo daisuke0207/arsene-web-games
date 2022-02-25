@@ -8,6 +8,7 @@ import {
   useMatches,
   useLoaderData,
   useCatch,
+  Link,
 } from "remix";
 import type { MetaFunction, LinksFunction, LoaderFunction } from "remix";
 import { ChakraProvider, Flex, Heading } from "@chakra-ui/react";
@@ -133,6 +134,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </body>
     </html>
   );
+};
+
+export const handle = {
+  breadcrumb: () => <Link to="/">Home</Link>,
 };
 
 export function CatchBoundary() {

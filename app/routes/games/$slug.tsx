@@ -1,4 +1,4 @@
-import { useLoaderData } from "remix";
+import { useLoaderData, Link } from "remix";
 import type { MetaFunction, LoaderFunction } from "remix";
 
 import { websiteMeta } from "~/utils/meta";
@@ -35,3 +35,9 @@ export default function Game() {
 
   return <GamePage unityApp={data.unityApp} />;
 }
+
+export const handle = {
+  breadcrumb: ({ slug }: { slug: string }) => (
+    <Link to={`/games/${slug}`}>{slug}</Link>
+  ),
+};

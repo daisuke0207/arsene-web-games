@@ -8,7 +8,11 @@ export const UnityComponent = ({
 }) => {
   return (
     <Box>
-      <Unity unityContext={unityContext} className="unity-component-full" />
+      <Unity
+        unityContext={unityContext}
+        className="unity-component-full"
+        tabIndex={1}
+      />
     </Box>
   );
 };

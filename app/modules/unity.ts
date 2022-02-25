@@ -13,6 +13,10 @@ export type UnityApp = {
   tags?: Array<string>;
 };
 
+export const UnityAppNames = {
+  Typing: "Typing",
+};
+
 const UnityApps: Array<UnityApp> = [
   {
     title: "タイピング",
@@ -23,10 +27,13 @@ const UnityApps: Array<UnityApp> = [
     image: "",
     tags: [],
     build: {
-      loaderUrl: "/unity/typing-focus/build/TypingFocus.loader.js",
-      dataUrl: "/unity/typing-focus/build/TypingFocus.data",
-      frameworkUrl: "/unity/typing-focus/build/TypingFocus.framework.js",
-      codeUrl: "/unity/typing-focus/build/TypingFocus.wasm",
+      loaderUrl: "/unity/typing/build/Typing.loader.js",
+      dataUrl: "/unity/typing/build/Typing.data",
+      frameworkUrl: "/unity/typing/build/Typing.framework.js",
+      codeUrl: "/unity/typing/build/Typing.wasm",
+      productName: "Typing",
+      productVersion: "1.0.0",
+      companyName: "Arsene",
     },
   },
 ];
@@ -44,7 +51,12 @@ export const getUnityApp = (slug: string) => {
 };
 
 export const getUnityContext = (unityApp: UnityApp) => {
-  const unityContext = new UnityContext(unityApp.build);
+  const unityContext = new UnityContext({
+    ...unityApp.build,
+    webglContextAttributes: {
+      preserveDrawingBuffer: true,
+    },
+  });
   if (!unityContext) return;
 
   return unityContext;

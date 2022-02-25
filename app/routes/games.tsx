@@ -1,4 +1,4 @@
-import { Outlet } from "remix";
+import { Outlet, Link } from "remix";
 import type { LoaderFunction, MetaFunction } from "remix";
 
 import type { JsonLd } from "~/types";
@@ -35,3 +35,7 @@ export default function Game() {
     </GameOutlet>
   );
 }
+
+export const handle = {
+  breadcrumb: () => <Link to="/games">Game</Link>,
+};
