@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, Divider } from "@chakra-ui/react";
 
 import Header from "~/components/common/header";
 import Footer from "~/components/common/footer";
@@ -20,7 +20,8 @@ export const Layout = ({ children }: { children?: ReactNode }) => {
       <GridItem w="100%" h="100%" maxW="800px" m="0 auto" py="10">
         {children}
       </GridItem>
-      <GridItem>
+      <GridItem w="100%" h="100%" maxW="800px" m="0 auto">
+        <Divider opacity=".3" />
         <Footer />
       </GridItem>
     </Grid>
