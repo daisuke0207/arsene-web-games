@@ -4,8 +4,6 @@ import {
   Text,
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbSeparator,
   Spacer,
 } from "@chakra-ui/react";
 import { Right } from "@icon-park/react";
