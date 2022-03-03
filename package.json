@@ -4,6 +4,7 @@
   "description": "",
   "license": "",
   "dependencies": {
+    "@balavishnuvj/remix-seo": "^1.0.2",
     "@chakra-ui/react": "^1.8.5",
     "@emotion/react": "^11.8.1",
     "@emotion/styled": "^11.8.1",

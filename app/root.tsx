@@ -37,6 +37,11 @@ export const links: LinksFunction = () => {
       href: siteConfig.icon,
       type: "image/svg+xml",
     },
+    {
+      rel: "shortcut icon",
+      href: siteConfig.icon,
+      type: "image/svg+xml",
+    },
     { rel: "stylesheet", href: styles },
     {
       rel: "canonical",
