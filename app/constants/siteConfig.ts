@@ -2,7 +2,7 @@ export const siteConfig = {
   lang: "ja",
   title: "Arsene Games",
   metaTitle: "Arsene Games",
-  metaDescription: "タイピング練習ゲームなどのWebゲームをプレイしよう。",
+  metaDescription: "タイピング練習などのWebゲームをプレイしよう。",
   metaKeywords: ["Arsene", "Game", "Play"],
   url: "https://games.arsene.one",
   icon: "/A.svg",
