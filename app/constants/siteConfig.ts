@@ -6,6 +6,7 @@ export const siteConfig = {
   metaKeywords: ["Arsene", "Game", "Play"],
   url: "https://games.arsene.one",
   icon: "/A.svg",
+  appleTouchIcon: "/A.svg",
   logo: "/arsene-games-red-blue.svg",
   coverImage: "/arsene-games-red-blue-vertical.svg",
   shareImageWidth: "1000",

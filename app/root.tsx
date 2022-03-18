@@ -11,7 +11,15 @@ import {
   Link,
 } from "remix";
 import type { MetaFunction, LinksFunction, LoaderFunction } from "remix";
-import { ChakraProvider, Flex, Heading } from "@chakra-ui/react";
+import {
+  Box,
+  Center,
+  ChakraProvider,
+  Flex,
+  Heading,
+  Link as CLink,
+  Text,
+} from "@chakra-ui/react";
 import { useLocation } from "react-router-dom";
 import { Error as ErrorIcon } from "@icon-park/react";
 
@@ -41,6 +49,10 @@ export const links: LinksFunction = () => {
       rel: "shortcut icon",
       href: siteConfig.icon,
       type: "image/svg+xml",
+    },
+    {
+      rel: "apple-touch-icon",
+      href: siteConfig.appleTouchIcon,
     },
     { rel: "stylesheet", href: styles },
     {
@@ -164,15 +176,20 @@ export function CatchBoundary() {
   return (
     <Document>
       <ChakraProvider theme={theme}>
-        <Layout>
-          <Flex align="center" gap="3">
-            <ErrorIcon theme="outline" size="30" fill="#ff0404" />
-            <Heading as="h1">
-              {caught.status}: {caught.statusText}
-            </Heading>
-          </Flex>
-          {message}
-        </Layout>
+        <Center w="100%" h="100vh">
+          <Box>
+            <Text fontSize="2xl" my="3">
+              <CLink href="https://games.arsene.one">ホームに戻る</CLink>
+            </Text>
+            <Flex align="center" gap="3">
+              <ErrorIcon theme="outline" size="30" fill="#ff0404" />
+              <Heading as="h1">
+                {caught.status}: {caught.statusText}
+              </Heading>
+            </Flex>
+            {message}
+          </Box>
+        </Center>
       </ChakraProvider>
     </Document>
   );
@@ -183,12 +200,17 @@ export function ErrorBoundary({ error }: { error: Error }) {
   return (
     <Document>
       <ChakraProvider theme={theme}>
-        <Layout>
-          <Flex align="center" gap="3">
-            <ErrorIcon theme="outline" size="30" fill="#ff0404" />
-            <Heading as="h1">{error.message}</Heading>
-          </Flex>
-        </Layout>
+        <Center w="100%" h="100vh">
+          <Box>
+            <Text fontSize="2xl" my="3">
+              <CLink href="https://games.arsene.one">ホームに戻る</CLink>
+            </Text>
+            <Flex align="center" gap="3">
+              <ErrorIcon theme="outline" size="30" fill="#ff0404" />
+              <Heading as="h1">{error.message}</Heading>
+            </Flex>
+          </Box>
+        </Center>
       </ChakraProvider>
     </Document>
   );
