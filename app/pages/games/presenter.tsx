@@ -6,7 +6,7 @@ type Props = {
   unityApps: Array<UnityApp>;
 };
 
-export const Games: React.VFC<Props> = ({ unityApps }) => {
+export const Games: React.FC<Props> = ({ unityApps }) => {
   return (
     <Box>
       {unityApps.map((app: UnityApp) => {

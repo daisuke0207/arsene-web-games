@@ -1,15 +1,15 @@
-import Unity, { UnityContext } from "react-unity-webgl";
+import { Unity, IUnityProps } from "react-unity-webgl";
 import { Box } from "@chakra-ui/react";
 
 export const UnityComponent = ({
-  unityContext,
+  unityProvider,
 }: {
-  unityContext: UnityContext;
+  unityProvider: IUnityProps["unityProvider"];
 }) => {
   return (
     <Box>
       <Unity
-        unityContext={unityContext}
+        unityProvider={unityProvider}
         className="unity-component-full"
         tabIndex={1}
       />

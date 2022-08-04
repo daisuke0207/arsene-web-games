@@ -9,8 +9,13 @@ import {
   useLoaderData,
   useCatch,
   Link,
-} from "remix";
-import type { MetaFunction, LinksFunction, LoaderFunction } from "remix";
+} from "@remix-run/react";
+import type {
+  MetaFunction,
+  LinksFunction,
+  LoaderFunction,
+  HeadersFunction,
+} from "@remix-run/node";
 import {
   Box,
   Center,
@@ -30,6 +35,12 @@ import { websiteMeta, jsonLd } from "~/utils/meta";
 import Layout from "~/components/common/layout";
 import NoneLayout from "~/components/common/none-layout";
 import FullLayout from "~/components/common/full-layout";
+
+export const headers: HeadersFunction = () => {
+  return {
+    "Cache-Control": "max-age=300, s-maxage=3600",
+  };
+};
 
 export const meta: MetaFunction = (props) => {
   const meta = websiteMeta({ pathname: props.location.pathname });

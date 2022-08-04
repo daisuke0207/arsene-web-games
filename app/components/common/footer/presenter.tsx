@@ -7,7 +7,7 @@ import {
   Spacer,
 } from "@chakra-ui/react";
 import { Right } from "@icon-park/react";
-import { useMatches } from "remix";
+import { useMatches } from "@remix-run/react";
 
 export const Footer = () => {
   const matches = useMatches();
@@ -24,7 +24,11 @@ export const Footer = () => {
               .filter((match) => match.handle && match.handle.breadcrumb)
               .map((match, index) => (
                 <BreadcrumbItem key={index}>
-                  {match.handle.breadcrumb(match.params)}
+                  {match.handle !== undefined ? (
+                    match.handle.breadcrumb(match.params)
+                  ) : (
+                    <></>
+                  )}
                 </BreadcrumbItem>
               ))}
         </Breadcrumb>

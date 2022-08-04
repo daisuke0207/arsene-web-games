@@ -1,5 +1,5 @@
-import { Outlet, Link } from "remix";
-import type { LoaderFunction, MetaFunction } from "remix";
+import { Outlet, Link } from "@remix-run/react";
+import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 
 import type { JsonLd } from "~/types";
 import { websiteMeta } from "~/utils/meta";

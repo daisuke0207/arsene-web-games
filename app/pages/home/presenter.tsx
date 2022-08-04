@@ -15,7 +15,7 @@ type Props = {
   unityApps: Array<UnityApp>;
 };
 
-export const Home: React.VFC<Props> = ({ unityApps }) => {
+export const Home: React.FC<Props> = ({ unityApps }) => {
   return (
     <Box>
       <Tabs>

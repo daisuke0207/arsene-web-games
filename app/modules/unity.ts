@@ -1,4 +1,4 @@
-import { UnityContext } from "react-unity-webgl";
+import { useUnityContext } from "react-unity-webgl";
 import type { IUnityConfig } from "react-unity-webgl";
 
 type device = "pc" | "mobile";
@@ -50,14 +50,15 @@ export const getUnityApp = (slug: string) => {
   return app;
 };
 
-export const getUnityContext = (unityApp: UnityApp) => {
-  const unityContext = new UnityContext({
-    ...unityApp.build,
-    webglContextAttributes: {
-      preserveDrawingBuffer: true,
-    },
-  });
-  if (!unityContext) return;
+export const getUnityProvider = (unityApp: UnityApp) => {
+  const { unityProvider, sendMessage, addEventListener, removeEventListener } =
+    useUnityContext({
+      ...unityApp.build,
+      webglContextAttributes: {
+        preserveDrawingBuffer: true,
+      },
+    });
+  if (!unityProvider) return;
 
-  return unityContext;
+  return unityProvider;
 };

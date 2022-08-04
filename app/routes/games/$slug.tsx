@@ -1,5 +1,5 @@
-import { useLoaderData, Link } from "remix";
-import type { MetaFunction, LoaderFunction } from "remix";
+import { useLoaderData, Link } from "@remix-run/react";
+import type { MetaFunction, LoaderFunction } from "@remix-run/node";
 
 import { websiteMeta } from "~/utils/meta";
 import GamePage from "~/pages/game";
